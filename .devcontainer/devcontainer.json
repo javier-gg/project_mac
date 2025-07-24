@@ -1,0 +1,38 @@
+{
+    // name - define project name
+    "name": "Mi proyecto",
+
+    // build - wrapper for the docker build command. Builds the container when dev container is launched.
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+
+    // Customizations including VSCode settings and extensions
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            }
+        }
+    },
+
+    // Extensions to be installed in the dev container
+    "extensions": [
+        "ms-python.python",
+        "quarto.quarto",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.jupyter-keymap",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "reditorsupport.r"
+    ],
+"forwardPorts": [8888],
+
+// User to be used inside the container
+"remoteUser": "root",
+
+// command to run on terminal after env  launches
+"postCreateCommand": "echo 'Container ready!'"
+}
